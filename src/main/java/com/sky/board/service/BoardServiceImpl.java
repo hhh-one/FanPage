@@ -31,4 +31,26 @@ public class BoardServiceImpl implements BoardService {
 		List<BoardVO> list = dao.getBoards();
 		return list;
 	}
+	
+	@Override
+	public BoardVO getDetailBoard(HttpServletRequest request, HttpServletResponse response) {
+		BoardVO vo = dao.getDetailBoard(request.getParameter("bno"));
+		return vo;
+	}
+
+	@Override
+	public void modifyBoard(HttpServletRequest request, HttpServletResponse response) {
+		String bno = request.getParameter("bno");
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		
+		dao.modifyBoard(bno, title, content);
+	}
+	
+	@Override
+	public void deleteBoard(HttpServletRequest request, HttpServletResponse response) {
+		String bno = request.getParameter("bno");
+		System.out.println("bno:" + bno);
+		dao.deleteBoard(bno);
+	}
 }

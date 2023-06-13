@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sky.board.model.BoardVO;
 import com.sky.board.service.BoardService;
@@ -42,9 +43,15 @@ public class BoardController extends HttpServlet {
 		
 		//필요한 객체 선언
 		BoardService service = new BoardServiceImpl();
+		HttpSession session = request.getSession();
+		/*
+		 * 임의 접속 아이디: 포차코
+		 */
+		session.setAttribute("user_name", "포차코");
 		
 		//글 목록 페이지
 		if (command.equals("/board/board_list.board")) {
+			//글 목록 list 가져오기
 			List<BoardVO> list = service.getBoards(request, response);
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("board_list.jsp").forward(request, response);
@@ -57,6 +64,31 @@ public class BoardController extends HttpServlet {
 		} else if (command.equals("/board/registForm.board")) {
 			service.regist(request, response);
 			
+			response.sendRedirect("board_list.board");
+		
+		//글 상세 내용 페이지
+		} else if (command.equals("/board/board_content.board")) {
+			//글 상세 내용 가져오기
+			BoardVO vo = service.getDetailBoard(request, response);
+			request.setAttribute("vo", vo);
+			request.getRequestDispatcher("board_content.jsp").forward(request, response);
+			
+		//글 수정 페이지
+		} else if (command.equals("/board/board_modify.board")) {
+			//수정 글 내용 가져오기
+			BoardVO vo = service.getDetailBoard(request, response);
+			request.setAttribute("vo", vo);
+			request.getRequestDispatcher("board_modify.jsp").forward(request, response);
+			
+		//글 수정 기능
+		} else if (command.equals("/board/board_update.board")) {
+			service.modifyBoard(request, response);
+			String bno = request.getParameter("bno");
+			response.sendRedirect("board_content.board?bno=" + bno);
+			
+		//글 삭제 기능
+		} else if (command.equals("/board/board_delete.board")) {
+			service.deleteBoard(request, response);
 			response.sendRedirect("board_list.board");
 		}
 	}

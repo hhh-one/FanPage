@@ -5,7 +5,7 @@
 <%@ include file="../include/header.jsp" %>
 
 <div class="content">
-	<h3>My Web게시판</h3>
+	<h3>BOARD</h3>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
