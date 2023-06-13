@@ -16,10 +16,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void regist(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		//username : 포차코로 임의 설정
-		session.setAttribute("name", "포차코");
-		
-		String name = (String) session.getAttribute("name");
+		String name = (String) session.getAttribute("member_name");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		

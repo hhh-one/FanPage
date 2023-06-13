@@ -306,6 +306,10 @@ th {
     margin: 5px 0 0 10px;
 }
 
+.comment-list:not(:last-child) {
+	border-bottom: 1px solid #dddddd;
+}
+
 .comment-write {
     display: flex;
     flex-direction: column;
@@ -323,10 +327,10 @@ th {
 	margin: 5px 10px 0 0;
 }
 
-.comment-info .comment-writer {
+.comment-info .write-writer {
     font-size: 11pt;
 }
-.comment-info .comment-content {
+.comment-info .write-content {
     width: 100%;
     font-size: 11pt;
     min-height: 30px;
@@ -334,7 +338,7 @@ th {
     margin: 10px 0;
 }
 
-.comment-content input {
+.write-content input {
     width: 100%;
     height: 100%;
     border: none;

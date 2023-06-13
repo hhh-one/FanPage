@@ -13,6 +13,9 @@ import javax.servlet.http.HttpSession;
 import com.sky.board.model.BoardVO;
 import com.sky.board.service.BoardService;
 import com.sky.board.service.BoardServiceImpl;
+import com.sky.comment.model.CommentVO;
+import com.sky.comment.service.CommentService;
+import com.sky.comment.service.CommentServiceImpl;
 
 @WebServlet("*.board")
 public class BoardController extends HttpServlet {
@@ -43,11 +46,12 @@ public class BoardController extends HttpServlet {
 		
 		//필요한 객체 선언
 		BoardService service = new BoardServiceImpl();
+		CommentService commentService = new CommentServiceImpl();
 		HttpSession session = request.getSession();
 		/*
 		 * 임의 접속 아이디: 포차코
 		 */
-		session.setAttribute("user_name", "포차코");
+		session.setAttribute("member_name", "포차코");
 		
 		//글 목록 페이지
 		if (command.equals("/board/board_list.board")) {
@@ -69,10 +73,14 @@ public class BoardController extends HttpServlet {
 		//글 상세 내용 페이지
 		} else if (command.equals("/board/board_content.board")) {
 			//글 상세 내용 가져오기
-			BoardVO vo = service.getDetailBoard(request, response);
-			request.setAttribute("vo", vo);
-			request.getRequestDispatcher("board_content.jsp").forward(request, response);
+			BoardVO boardvo = service.getDetailBoard(request, response);
+			request.setAttribute("boardvo", boardvo);
 			
+			//글에 대한 댓글들 가져오기
+			List<CommentVO> commentList = commentService.getComments(request, response);
+			request.setAttribute("commentList", commentList);
+			request.getRequestDispatcher("board_content.jsp").forward(request, response);
+		
 		//글 수정 페이지
 		} else if (command.equals("/board/board_modify.board")) {
 			//수정 글 내용 가져오기
