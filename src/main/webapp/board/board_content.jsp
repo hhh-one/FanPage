@@ -37,15 +37,16 @@
 			</c:forEach>
 			<!-- comment 작성 -->
 			<div class="comment-write">
-				<form action="">
+				<form action="writeComment.comment" method="post">
+					<input type="hidden" name="bno" value="${ boardvo.bno }" />
 					<div class="comment-info">
 						<div class="write-writer">${ sessionScope.member_name }</div>
 						<div class="write-content">
-							<input type="text" placeholder="댓글을 남겨보세요">
+							<input type="text" placeholder="댓글을 남겨보세요" name="content" />
 						</div>
 					</div>
 					<div class="comment-regist">
-						<input type="submit" value="등록" onclick="location.href='writeComment.comment?bno=${ boardvo.bno }'">
+						<input type="submit" value="등록" />
 					</div>
 				</form>
 			</div>
@@ -53,8 +54,8 @@
 
 		<div class="board-btn">
 		<c:if test="${ boardvo.name == sessionScope.member_name }">
-			<input type="button" value="수정" class="edit-btn" onclick="location.href='board_modify.board?bno=${ boardvo.bno }'">
-			<input type="button" value="삭제" class="delete-btn" onclick="location.href='board_delete.board?bno=${ boardvo.bno }'">
+			<input type="button" value="수정" class="edit-btn" onclick="location.href='board_modify.board?bno=${ boardvo.bno }'" />
+			<input type="button" value="삭제" class="delete-btn" onclick="location.href='board_delete.board?bno=${ boardvo.bno }'" />
 		</c:if>
 			<input type="button" value="목록" class="list-btn" onclick="location.href='board_list.board'">
 		</div>

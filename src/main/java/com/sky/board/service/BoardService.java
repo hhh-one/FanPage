@@ -13,4 +13,5 @@ public interface BoardService {
 	BoardVO getDetailBoard(HttpServletRequest request, HttpServletResponse response);
 	void modifyBoard(HttpServletRequest request, HttpServletResponse response);
 	void deleteBoard(HttpServletRequest request, HttpServletResponse response);
+	void updateHit(String bno);
 }

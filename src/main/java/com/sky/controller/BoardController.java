@@ -72,6 +72,7 @@ public class BoardController extends HttpServlet {
 		
 		//글 상세 내용 페이지
 		} else if (command.equals("/board/board_content.board")) {
+			service.updateHit(request.getParameter("bno"));
 			//글 상세 내용 가져오기
 			BoardVO boardvo = service.getDetailBoard(request, response);
 			request.setAttribute("boardvo", boardvo);

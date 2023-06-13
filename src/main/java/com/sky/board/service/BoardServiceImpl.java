@@ -50,4 +50,9 @@ public class BoardServiceImpl implements BoardService {
 		System.out.println("bno:" + bno);
 		dao.deleteBoard(bno);
 	}
+	
+	@Override
+	public void updateHit(String bno) {
+		dao.updateHit(bno);
+	}
 }

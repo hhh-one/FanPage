@@ -25,7 +25,7 @@ public class BoardDAO {
 		return instance;
 	}
 	
-	private String url = "jdbc:oracle:thin:@172.30.1.29:1521:xe";
+	private String url = "jdbc:oracle:thin:172.30.1.29:1521:xe";
 	private String uid = "SKY";
 	private String upw = "SKY";
 
@@ -97,6 +97,31 @@ public class BoardDAO {
 			}
 		}
 		return list;
+	}
+	
+	public void updateHit(String bno) {
+		String sql = "UPDATE BOARDS SET HIT = HIT + 1 WHERE BNO = ?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DriverManager.getConnection(url, uid, upw);
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bno);
+			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	//글 상세내용 기능
