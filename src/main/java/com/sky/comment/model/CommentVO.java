@@ -1,34 +1,32 @@
-package com.sky.board.model;
+package com.sky.comment.model;
 
 import java.sql.Timestamp;
 
-public class BoardVO {
-	private int bno;
+public class CommentVO {
+	private int cno;
 	private String name;
-	private String title;
+	private String bno;
 	private String content;
 	private Timestamp regdate;
-	private int hit;
 	
-	public BoardVO() {
+	public CommentVO() {
 	}
 
-	public BoardVO(int bno, String name, String title, String content, Timestamp regdate, int hit) {
+	public CommentVO(int cno, String name, String bno, String content, Timestamp regdate) {
 		super();
-		this.bno = bno;
+		this.cno = cno;
 		this.name = name;
-		this.title = title;
+		this.bno = bno;
 		this.content = content;
 		this.regdate = regdate;
-		this.hit = hit;
 	}
 
-	public int getBno() {
-		return bno;
+	public int getCno() {
+		return cno;
 	}
 
-	public void setBno(int bno) {
-		this.bno = bno;
+	public void setCno(int cno) {
+		this.cno = cno;
 	}
 
 	public String getName() {
@@ -39,12 +37,12 @@ public class BoardVO {
 		this.name = name;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getBno() {
+		return bno;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBno(String bno) {
+		this.bno = bno;
 	}
 
 	public String getContent() {
@@ -61,13 +59,5 @@ public class BoardVO {
 
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
-	}
-
-	public int getHit() {
-		return hit;
-	}
-
-	public void setHit(int hit) {
-		this.hit = hit;
 	}
 }
