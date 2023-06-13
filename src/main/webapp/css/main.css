@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/* reset css */
+html {
+    height: 100%;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    height: 100%;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* ---reset css--- */
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 1280px;
+    height: 200px;
+    background-color: lightgray;
+}
+
+header .title {
+    font-size: 30pt;
+    font-weight: bold;
+}
+
+header .title-info {
+    font-size: 20px;
+}
+
+/* container */
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 20px 0 0 0;
+}
+
+.nav {
+    width: 250px;
+    min-width: 250px;
+    margin: 0 20px 0 0; /* 위 오른쪽 아래 왼쪽 */
+}
+
+.actor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px #ddd;
+}
+
+.profile-img img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+.profile-info .title {
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.profile-info li {
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.profile-info li:last-child {
+    padding: 0 0 20px 0;
+}
+
+.cafe-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 0 0;
+    border-top: 2px solid #363636;
+    border-bottom: 2px solid #363636;
+    padding: 15px 0;
+}
+
+.cafe-menu .depth1 > li {
+	padding: 10px;
+}
+
+.cafe-menu .depth1 > li:not(:last-child) {
+	border-bottom: 1px solid #363636;
+}
+
+.cafe-menu li {
+	margin: 5px 0;
+	font-size: 10pt;
+}
+
+.cafe-menu .menu-items {
+	margin: 5px 0;
+    font-size: 12pt;
+    font-weight: bold;
+    
+}
+
+.cafe-menu .menu-head {
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+.cafe-menu button {
+    padding: 10px 80px;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.content {
+    width: 800px;
+    min-width: 800px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #efefef;
+    margin: 0 0 20px 0;
+}
+
+
+/* board_list.jsp */
+.table {
+    border-collapse: collapse !important;
+  }
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+
+th {
+  text-align: left;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.table .table {
+  background-color: #fff;
+}
+
+/* ---board_list.jsp--- */
+
+/* main */
+.main-wrap {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-image {
+	height : 100%;
+	object-fit: cover;
+}
+
+
+/* footer */
+footer {
+    width: 100%;
+    min-width: 1280px;
+    height: 150px;
+    background-color: darkgray;
+}
