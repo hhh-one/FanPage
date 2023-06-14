@@ -30,4 +30,11 @@ public class CommentServiceImpl implements CommentService {
 		
 		dao.writeComment(name, intBno, content);
 	}
+	
+	@Override
+	public void deleteComment(HttpServletRequest request, HttpServletResponse response) {
+		String cno = request.getParameter("cno");
+		System.out.println("comment service cno: " + cno);
+		dao.deleteComment(cno);
+	}
 }

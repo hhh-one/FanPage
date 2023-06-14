@@ -9,7 +9,7 @@
 	<!-- CSS 적용 -->
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css">
     <!-- JS 적용 -->
-    <script src="<%= request.getContextPath() %>/js/main.js?v=1"></script>
+    <script type="text/javascript" src="<%= request.getContextPath() %>/js/main.js"></script>
 </head>
 <body>
 	<header>

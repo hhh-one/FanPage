@@ -31,7 +31,7 @@ public class CommentDAO {
 	public List<CommentVO> getComments(String bno) {
 		List<CommentVO> list = new ArrayList<>();
 		
-		String sql = "SELECT * FROM COMMENTS WHERE BNO = ?";
+		String sql = "SELECT * FROM COMMENTS WHERE BNO = ? ORDER BY CNO";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -46,10 +46,11 @@ public class CommentDAO {
 			rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
+				int cno = rs.getInt("cno");
 				String name = rs.getString("name");
 				String content = rs.getString("content");
 				Timestamp regdate = rs.getTimestamp("regdate");
-				CommentVO vo = new CommentVO(0, name, bno, content, regdate);
+				CommentVO vo = new CommentVO(cno, name, bno, content, regdate);
 				list.add(vo);
 			}
 		} catch (Exception e) {
@@ -83,6 +84,33 @@ public class CommentDAO {
 			pstmt.setString(3, content);
 			
 			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//댓글 삭제
+	public void deleteComment(String cno) {
+		String sql = "DELETE FROM COMMENTS WHERE CNO = ?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DriverManager.getConnection(url, uid, upw);
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, cno);
+			
+			pstmt.executeUpdate();
+			System.out.println("--댓글 삭제 성공--");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

@@ -49,7 +49,13 @@ public class CommentController extends HttpServlet {
 		if (command.equals("/board/writeComment.comment")) {
 			commentService.writeComment(request, response);
 			String bno = request.getParameter("bno");
-			System.out.println("controller:" + bno);
+			System.out.println("controller 댓글 작성 bno:" + bno);
+			response.sendRedirect("board_content.board?bno=" + bno);
+			
+		//댓글 삭제 기능
+		} else if (command.equals("/board/deleteComment.comment")) {
+			commentService.deleteComment(request, response);
+			String bno = request.getParameter("bno");
 			response.sendRedirect("board_content.board?bno=" + bno);
 		}
 	}

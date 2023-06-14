@@ -10,4 +10,5 @@ import com.sky.comment.model.CommentVO;
 public interface CommentService {
 	List<CommentVO> getComments(HttpServletRequest request, HttpServletResponse response);
 	void writeComment(HttpServletRequest request, HttpServletResponse response);
+	void deleteComment(HttpServletRequest request, HttpServletResponse response);
 }
