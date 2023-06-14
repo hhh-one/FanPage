@@ -26,7 +26,7 @@
 	
 %>
 
-<body>
+<div class="content">
 <div style="text-align: center">
 
 	<h3 style="font-weight: bold; font-size: 18px;">회원 탈퇴</h3><br><br>
@@ -44,7 +44,8 @@
 	</form>
 	
 </div>
+</div>
 
-</body>
+
 
 <%@ include file="../include/footer.jsp" %>
