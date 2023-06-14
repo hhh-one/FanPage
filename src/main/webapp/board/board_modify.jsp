@@ -12,7 +12,7 @@
 		input 태그의 hidden속성을 쓴다 -->
 		<input type="hidden" name="bno" value="${ vo.bno }">
 		
-		<table border="1" width="500">
+		<table class="write-table">
 			<tr>
 				<td>글 제목</td>
 				<td>
@@ -25,7 +25,7 @@
 					<textarea rows="10" style="width: 95%;" name="content" >${ vo.content }</textarea>
 				</td>
 			</tr>
-			<tr>
+			<tr class="write-btn">
 				<td colspan="2">
 					<input type="submit" value="작성 완료" onclick="">
 					&nbsp;&nbsp;
