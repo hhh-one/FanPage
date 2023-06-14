@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     
 <%@ include file="../include/header.jsp" %>
 
@@ -18,13 +20,15 @@
 				</tr>
 			</thead>		
 			<tbody>
+			<c:forEach items="${list }" var="mainList">
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>		
+					<td><c:out value="${list.bno } "></c:out></td>
+					<td><c:out value="${list.name } "></c:out></td>
+					<td><c:out value="${list.title } "></c:out></td>
+					<td><c:out value="${list.regdate } "></c:out></td>
+					<td><c:out value="${list.hit } "></c:out></td>
+				</tr>
+			</c:forEach>		
 			</tbody>
 		
 		</table>
