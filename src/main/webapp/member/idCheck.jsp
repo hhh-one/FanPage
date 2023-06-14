@@ -26,12 +26,13 @@
 
 	<div style="text-align: center">
 	
-		<h3> 아이디 중복확인 </h3>
+		<br><br>
+		<h3 style="font-size:20px"> 아이디 중복확인 </h3><br>
 		
 	    <form method="post" action="idCheckResult.jsp" onsubmit="return blankCheck(this)">
 	    
 	    아이디 : <input type="text" name="id" maxlength="10" autofocus>
-	    <input type="submit" value="중복확인">
+	    <input type="submit" value="중복확인" style="background-color: #dcdcdc; border-color: white; color: #646464; width: 70px; height: 30px;">
 	    
 	    </form>
 	    

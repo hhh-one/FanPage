@@ -25,13 +25,13 @@
 <body>
 
 	<div style="text-align: center">
-	
-		<h3> 닉네임 중복확인 </h3>
+	<br><br>
+		<h3 style="font-size:20px"> 닉네임 중복확인 </h3><br>
 		
 	    <form method="post" action="nameCheckResult.jsp" onsubmit="return blankCheck(this)">
 	    
 	    닉네임 : <input type="text" name="name" maxlength="10" autofocus>
-	    <input type="submit" value="중복확인">
+	    <input type="submit" value="중복확인" style="background-color: #dcdcdc; border-color: white; color: #646464; width: 70px; height: 30px;">
 	    
 	    </form>
 	    
