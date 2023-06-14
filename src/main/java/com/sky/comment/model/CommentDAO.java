@@ -28,7 +28,7 @@ public class CommentDAO {
 	}
 	
 	//특정 글에 해당하는 댓글 list
-	public List<CommentVO> getComments(String bno, String name) {
+	public List<CommentVO> getComments(String bno) {
 		List<CommentVO> list = new ArrayList<>();
 		
 		String sql = "SELECT * FROM COMMENTS WHERE BNO = ?";
@@ -46,6 +46,7 @@ public class CommentDAO {
 			rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
+				String name = rs.getString("name");
 				String content = rs.getString("content");
 				Timestamp regdate = rs.getTimestamp("regdate");
 				CommentVO vo = new CommentVO(0, name, bno, content, regdate);

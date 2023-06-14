@@ -47,11 +47,6 @@ public class BoardController extends HttpServlet {
 		//필요한 객체 선언
 		BoardService service = new BoardServiceImpl();
 		CommentService commentService = new CommentServiceImpl();
-		HttpSession session = request.getSession();
-		/*
-		 * 임의 접속 아이디: 포차코
-		 */
-		session.setAttribute("member_name", "포차코");
 		
 		//글 목록 페이지
 		if (command.equals("/board/board_list.board")) {

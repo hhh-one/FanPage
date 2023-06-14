@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,8 @@
 <title>서강준(SEO KANG JUN) 팬페이지</title>
 	<!-- CSS 적용 -->
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css">
+    <!-- JS 적용 -->
+    <script src="<%= request.getContextPath() %>/js/main.js?v=1"></script>
 </head>
 <body>
 	<header>
@@ -36,10 +39,26 @@
             </div>
             <div class="cafe-menu">
                 <ul class="depth1">
-                    <li>
-                    	<div class="menu-head"><button>JOIN</button></div>
-                    	<div class="menu-items"><a href="">LOGIN</a></div>
-                    </li>
+                    <c:choose>
+                    	<c:when test=" ${sessionScope.member_id != null }">
+                    	<li>
+                    		<div class="menu-items menu-join"><a href="<%= request.getContextPath() %>/member/member_mypage.member" style="color: #0040FF">MYPAGE</a></div>
+	                    </li>
+	                    <li>
+                    		<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_logout.member">LOGOUT</a></div>
+                    	</li>
+                	    </c:when>
+                	    
+            	        <c:otherwise>
+            	        <li>
+        	            	<div class="menu-items menu-join"><a href="<%= request.getContextPath() %>/member/member_join.member" style="color: #0040FF">JOIN</a></div>
+    	                 </li>
+    	                 <li>
+    	                 	<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_login.member">LOGIN</a></div>
+    	                 </li>
+	                     </c:otherwise>
+                    </c:choose>
+                    
                     <li>
                     	<div class="menu-items"><a href="<%= request.getContextPath() %>/board/board_list.board">BOARD</a></div>
                 		<div class="menu-items"><a href="">TALKTALK</a></div>
