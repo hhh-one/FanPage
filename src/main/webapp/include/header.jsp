@@ -13,7 +13,7 @@
 </head>
 <body>
 	<header>
-        <div class="title">SKYBLUE IN YOUR EYES</div>
+        <div class="title">SKYBLUE IN YOUR EYES</div><br>
         <div class="title-info">서강준(SEO KANG JUN) 팬페이지</div>
     </header>
     <!-- end header -->

@@ -94,21 +94,13 @@
 		
 		<br></br><br></br>
 		
-		<table border="1">
-			<tr>
-				<td><input type="button" name="회원수정" value="회원수정" class="btn-8" onclick="member_modify.member" ></td>
-				</td>				
-			</tr>	
-			<tr>
-				<td><input type="button" name="로그아웃" value="로그아웃" class="btn-8" onclick="member_logout.member" ></td>
-				</td>				
-			</tr>	
-			<tr>
-				<td><input type="button" name="회원탈퇴" value="회원탈퇴" class="btn-8" onclick="member_delete.member" ></td>
-				</td>				
-			</tr>
+		<a href="member_modify.member">회원수정</a><br></br><br></br>
+		
+		<a href="member_logout.member">로그아웃</a><br></br><br></br>		
+				
+		<a href="member_delete.member">회원탈퇴</a><br></br><br></br>
 	</div>
-</table>
+
 </section>
 
 <%@ include file="../include/footer.jsp" %>  
