@@ -23,10 +23,82 @@ String header = request.getHeader("content-type");
 	<table cellpadding="10">
  	 <!-- 테이블 콘텐츠 -->
 	</table>
-	
-	
-	
+		
 </style>
+
+<style>
+
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  color: #676767;
+}
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+.btn-5 button {
+  margin: 20px;
+  outline: none;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+.btn-5 {
+  background: #000;
+  color: #fff;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-5:hover {
+  background: transparent;
+  color: #000;
+   box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #000;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+</style>
+
+
 
 <script>
 
@@ -104,11 +176,12 @@ String header = request.getHeader("content-type");
 			<section style="text-align: center; margin-top: 10px;">
 			<div style="display: inline-block; margin-right: 10px;">
 			
-			<input type="submit" value="가입하기" style="background-color: #AFDDFA	; color: white; border-color: white; width: 70px; height: 30px;">
+			<input type="submit" value="가입하기" class="btn-5" >
+					<!-- style="background-color: #AFDDFA; color: white; border-color: white; width: 70px; height: 30px;" -->
 			</div>
 			
 			<div style="display: inline-block;">
-			<input type="reset" value="입력초기화"   style="background-color: #dcdcdc; border-color: white; color: #646464; width: 90px; height: 30px;" >
+			<input type="reset" value="입력초기화" style="background-color: #dcdcdc; border-color: white; color: #646464; width: 90px; height: 30px;" >
 			</div><br><br>
 			<a href="../main.jsp" style="font-size: 13px;">메인 페이지로 돌아가기</a> 
 			
