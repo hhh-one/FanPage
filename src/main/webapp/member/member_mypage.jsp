@@ -83,7 +83,7 @@
 
 </style>
 
-
+<div class="content">
 <section  style="text-align: center; margin-top: 20px;">
 	<div style="display: inline-block;" align="center">
 	
@@ -102,5 +102,6 @@
 	</div>
 
 </section>
+</div>
 
 <%@ include file="../include/footer.jsp" %>  

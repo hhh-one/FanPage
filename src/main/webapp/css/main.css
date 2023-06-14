@@ -307,7 +307,7 @@ textarea {
 	text-align: center;
 }
 
-.content-wrap input[type="submit"],input[type="button"] {
+.content-wrap input[type="submit"],.content-wrap input[type="button"] {
   padding: 10px 20px;
   background-color: #D8D8D8;
   color: #000;
@@ -316,7 +316,7 @@ textarea {
   cursor: pointer;
 }
 
-.content-wrap input[type="submit"]:hover,input[type="button"]:hover {
+.content-wrap input[type="submit"]:hover,.content-wrap input[type="button"]:hover {
   background-color: #BDBDBD;
 }
 

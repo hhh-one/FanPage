@@ -147,7 +147,7 @@
     
     
     
-<section>
+<div class="content">
 	
 	<div align="center"  margin-top: 10px;" >
 	<br><br>
@@ -175,8 +175,7 @@
 			
 			<div style="display: inline-block;" >
 			<input type="button" value="가입하기" class="btn-8" onclick="location.href='member_join.member' " >
-			</div>			
-	</section>
+			</div>
 			
 		</form><br><br>
 		
@@ -186,6 +185,6 @@
 	</div>
 	
 	
-</section>
+</div>
 
 <%@ include file="../include/footer.jsp" %>
