@@ -12,6 +12,6 @@ public interface MemberService {
 	MemberVO login(HttpServletRequest request, HttpServletResponse response);
 	MemberVO getInfo(HttpServletRequest request, HttpServletResponse response);
 	int updateInfo(HttpServletRequest request, HttpServletResponse response);
-	void deleteInfo(HttpServletRequest request, HttpServletResponse response);
+	int deleteInfo(HttpServletRequest request, HttpServletResponse response);
 
 }
