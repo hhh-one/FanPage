@@ -92,7 +92,7 @@
 
 
 
-<section style="text-align: center; margin-top: 10px;" >
+<div class="content" style="text-align: center; margin-top: 10px;" >
 
 	<div style="display: inline-block;" align="center">
 	
@@ -169,7 +169,7 @@
 		
 	</div>
 	
-</section>
+</div>
 
 <!-- <script>
 	function inputIdChk() {

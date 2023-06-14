@@ -27,7 +27,7 @@
 	
 </style>
 
-<section>
+<div class="content">
 	<div align="center">
 	
 		<h3>회원정보 수정</h3><br></br>
@@ -69,7 +69,7 @@
 	</div>
 
 
-</section>
+</div>
 
 
 <%@ include file="../include/footer.jsp" %>    

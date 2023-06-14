@@ -4,7 +4,7 @@
 <%@ include file="../include/header.jsp" %>
     
     
-<section>
+<div class="content">
 	
 	<div align="center">
 	<br><br>
@@ -26,6 +26,6 @@
 	</div>
 	
 	
-</section>
+</div>
 
 <%@ include file="../include/footer.jsp" %>

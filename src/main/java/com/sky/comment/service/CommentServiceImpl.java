@@ -15,10 +15,8 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public List<CommentVO> getComments(HttpServletRequest request, HttpServletResponse response) {
 		String bno = request.getParameter("bno");
-		HttpSession session = request.getSession();
-		String name = (String) session.getAttribute("member_name");
 		
-		List<CommentVO> list = dao.getComments(bno, name);
+		List<CommentVO> list = dao.getComments(bno);
 		return list;
 	}
 	

@@ -92,8 +92,7 @@ public class MemberController extends HttpServlet {
 					
 					session.setAttribute("member_id", vo.getId() );
 					session.setAttribute("member_name", vo.getName() );
-					
-					response.sendRedirect("member_mypage.member"); 
+					response.sendRedirect("member_mypage.member");
 					return;
 				}
 				
@@ -124,9 +123,6 @@ public class MemberController extends HttpServlet {
 				int result = service.updateInfo(request, response);
 				
 				if(result == 1 ) { //성공(유저닉네임이 변경)
-					
-					String name = request.getParameter("name");
-					session.setAttribute("member_name", name);
 					
 					//out객체를 이용한 메시지 전달
 					response.setContentType("text/html; charset=UTF-8;");
