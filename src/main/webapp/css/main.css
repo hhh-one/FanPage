@@ -67,6 +67,8 @@ a:active {
     color: black;
 }
 
+
+
 /* header */
 header {
     display: flex;
@@ -117,7 +119,7 @@ header .title-info {
 }
 
 .profile-info .title {
-    font-size: 13pt;
+    font-size: 10pt;
     font-weight: bold;
     margin: 0 0 5px 0;
 }
@@ -129,6 +131,40 @@ header .title-info {
 
 .profile-info li:last-child {
     padding: 0 0 20px 0;
+}
+
+/* ---header.jsp(audio관련)--- */
+.audio-container {
+	position:relative;
+	width:auto;
+	height:auto;
+}
+
+.audio-title {
+	font-size: 11pt;
+}
+
+.audio-player {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.audio-button {
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin:10px;
+	background-color:#888888;
+	border-radius:50%;
+}
+
+.audio-time {
+	display:inline-block;
+	margin:10px;
+	color:#333333;
 }
 
 .cafe-menu {
@@ -184,16 +220,19 @@ header .title-info {
 
 
 /* board_list.jsp */
+.list-title {
+	font-size: 26pt;
+    font-weight: 400;
+    margin: 5px 0 5px 5px;
+}
+
 .table {
     border-collapse: collapse !important;
-  }
+}
+  
   .table td,
   .table th {
     background-color: #fff !important;
-  }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #ddd !important;
   }
 
 th {
@@ -203,6 +242,8 @@ th {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
+  border-top: 2px solid #363636;
+  margin-top: 10px;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -235,6 +276,51 @@ th {
 }
 
 /* ---board_list.jsp--- */
+
+/* board_write.jsp & board_modify.jsp */
+.write-title {
+	font-size: 26pt;
+    font-weight: 400;
+    margin: 10px 0 5px 5px;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.write-table tr {
+	margin: 0 0 10px 0;
+}
+
+.write-table {
+  width: 100%;
+}
+
+.write-table td {
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+}
+
+.write-btn {
+	width: 100%;
+	text-align: center;
+}
+
+.content-wrap input[type="submit"],input[type="button"] {
+  padding: 10px 20px;
+  background-color: #D8D8D8;
+  color: #000;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.content-wrap input[type="submit"]:hover,input[type="button"]:hover {
+  background-color: #BDBDBD;
+}
+
+/* ---board_write.jsp & board_modify.jsp--- */
 
 /* board_content.jsp */
 .content-wrap {
@@ -400,7 +486,7 @@ th {
 }
 /* ---board_content.jsp--- */
 
-/* ---main.jsp--- */
+/* main.jsp */
 .main-wrap {
 	height: 100%;
 	display: flex;
@@ -411,40 +497,21 @@ th {
 	height : 100%;
 	object-fit: cover;
 }
-/* ---header.jsp(audio관련)--- */
-.audio-container {
-	position:relative;
-	width:auto;
-	height:auto;
-}
-
-.audio-player {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-}
-
-.audio-button {
-	display:inline-block;
-	width:30px;
-	height:30px;
-	margin:10px;
-	background-color:#888888;
-	border-radius:50%;
-}
-
-.audio-time {
-	display:inline-block;
-	margin:10px;
-	color:#333333;
-}
+/* ---main.jsp--- */
 
 /* footer */
 footer {
     width: 100%;
     min-width: 1280px;
     height: 150px;
-    background-color: darkgray;
+    background-color: #F2F2F2;
+}
+
+.footer-info {
+	color: #848484;
+	height: 100%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
