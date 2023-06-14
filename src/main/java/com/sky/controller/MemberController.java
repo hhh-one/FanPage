@@ -19,7 +19,7 @@ public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
         
     public MemberController() {
-        //super();       
+        super();       
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -152,28 +152,31 @@ public class MemberController extends HttpServlet {
 				
 				service.deleteInfo(request, response);
 				
-//				if(result == 1) {					
-					//String id = (String)session.getAttribute("member_id");
-					//session.invalidate();
+				int result = 0;			
 				
-					String id = request.getParameter("_id");		
+				if(result == 1) {					
+					String id = (String)request.getSession().getAttribute("member_id");
+					String pw = request.getParameter("pw");
+					session.invalidate();
+				
+					//String id = request.getParameter("_id");		
 					MemberDAO dao = MemberDAO.getInstance();					
-					dao.deleteInfo(id);					
+					dao.deleteInfo(id, pw);					
 					
 					response.setContentType("text/html; charset=UTF-8;");
 					PrintWriter out = response.getWriter();
 					out.println("탈퇴 성공");
-					//request.getRequestDispatcher("../main.jsp").forward(request, response);	
+					request.getRequestDispatcher("../main.jsp").forward(request, response);	
 					
 					return;
+					
 			} else { //실패시 이동					
 				response.sendRedirect("member_mypage.member");
 				return;
-			}	
+			}
 				
-
 	} //delete_result end
 }
-
+}
 
 

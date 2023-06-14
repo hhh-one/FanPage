@@ -411,7 +411,35 @@ th {
 	height : 100%;
 	object-fit: cover;
 }
-/* ---main.jsp--- */
+/* ---header.jsp(audio관련)--- */
+.audio-container {
+	position:relative;
+	width:auto;
+	height:auto;
+}
+
+.audio-player {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.audio-button {
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin:10px;
+	background-color:#888888;
+	border-radius:50%;
+}
+
+.audio-time {
+	display:inline-block;
+	margin:10px;
+	color:#333333;
+}
 
 /* footer */
 footer {

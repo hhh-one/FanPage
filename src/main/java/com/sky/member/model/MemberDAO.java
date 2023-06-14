@@ -280,38 +280,46 @@ public class MemberDAO {
 	
 
 	//회원 삭제
-	public int deleteInfo(String id) { // String pw 삭제시 아이디 or 닉네임? memberVO vo or String name
-				
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		String sql = "delete from members where id=?";
-		
-		int result = 0;
-		
-		try {
-	           conn = DriverManager.getConnection(url, uid, upw);
-	           
-	           pstmt = conn.prepareStatement(sql);
-	           pstmt.setString(1, id);
-	           pstmt.executeUpdate();	
-//	           if(result == 1) {
-//					pstmt.executeUpdate();	
-//	           } else {
-//					result = 0;
-//				}	
-		} catch (Exception e) {		
-			e.printStackTrace();
-		} finally {
+		public int deleteInfo(String id, String pw) { // String pw 삭제시 아이디 or 닉네임? memberVO vo or String name
+					
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			
+			String sql = "delete from members where id=? and pw=?";
+			
+			int result = 0;
+			
 			try {
-				conn.close();
-				pstmt.close();				
-			} catch (SQLException e) {				
+		           conn = DriverManager.getConnection(url, uid, upw);	           
+		           pstmt = conn.prepareStatement(sql);
+		           pstmt.setString(1, id);
+		           pstmt.setString(2, pw);
+		           pstmt.executeUpdate();		           
+		           
+		           //result = pstmt.executeUpdate();
+		           	           		           
+//		           if (result == 0) {
+//		               // 비밀번호가 일치하지 않는 경우
+//		               result = -1;
+//		           }
+		           
+		           if(result == 1) {
+						pstmt.executeUpdate();	
+		           } else {
+						result = 0;
+					}	
+
+			} catch (Exception e) {		
 				e.printStackTrace();
-			}
-		}
-	
-		return result;
+			} finally {
+				try {
+					conn.close();
+					pstmt.close();				
+				} catch (SQLException e) {				
+					e.printStackTrace();
+				}
+			}	
+			return result;		
 		
 	}
 }

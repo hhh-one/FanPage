@@ -25,31 +25,40 @@
                 </div>
                 <div class="profile-info">
                     <div class="title">서강준(SEO KANG JUN) 팬페이지</div>
-                    <ul>
-                        <li>🎵 You are my love
-                        	<audio autoplay controls>
-                         		<source src="audio/01._Seo_Kang_Joon_-_You_Are_My_Love.mp3" type="audio/mp3">
-                         	</audio>
-                        </li>
-                    </ul>
+                    <!-- 오디오 관련 내용 -->
+                    <div class = "audio-container">
+                    	<ul>
+                        	<li>🎵 You are my love
+                        		<audio class="audio-player" autoplay controls>
+                         			<source src="../audio/You%20Are%20My%20Love.mp3" type="audio/mp3">
+                         		</audio>
+                       	 </li>
+                    	</ul>
+                    </div>
                 </div>
             </div>
             <div class="cafe-menu">
                 <ul class="depth1">
                     <c:choose>
-                    	<c:when test=" ${ sessionScope.member_id != null }">
+                    	<c:when test=" ${sessionScope.member_id != null }">
                     	<li>
                     		<div class="menu-items menu-join"><a href="<%= request.getContextPath() %>/member/member_mypage.member" style="color: #0040FF">MYPAGE</a></div>
-                    		<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_logout.member">LOGOUT</a></div>
 	                    </li>
+	                    <li>
+                    		<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_logout.member">LOGOUT</a></div>
+                    	</li>
                 	    </c:when>
+                	    
             	        <c:otherwise>
             	        <li>
         	            	<div class="menu-items menu-join"><a href="<%= request.getContextPath() %>/member/member_join.member" style="color: #0040FF">JOIN</a></div>
-    	                	<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_login.member">LOGIN</a></div>
-    	                </li>
-	                    </c:otherwise>
+    	                 </li>
+    	                 <li>
+    	                 	<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_login.member">LOGIN</a></div>
+    	                 </li>
+	                     </c:otherwise>
                     </c:choose>
+                    
                     <li>
                     	<div class="menu-items"><a href="<%= request.getContextPath() %>/board/board_list.board">BOARD</a></div>
                 		<div class="menu-items"><a href="">TALKTALK</a></div>
@@ -72,3 +81,4 @@
                 </ul>
             </div>
         </div>
+       </div>
