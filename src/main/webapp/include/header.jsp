@@ -37,19 +37,25 @@
             <div class="cafe-menu">
                 <ul class="depth1">
                     <c:choose>
-                    	<c:when test=" ${ sessionScope.member_id != null }">
+                    	<c:when test=" ${sessionScope.member_id != null }">
                     	<li>
                     		<div class="menu-items menu-join"><a href="<%= request.getContextPath() %>/member/member_mypage.member" style="color: #0040FF">MYPAGE</a></div>
-                    		<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_logout.member">LOGOUT</a></div>
 	                    </li>
+	                    <li>
+                    		<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_logout.member">LOGOUT</a></div>
+                    	</li>
                 	    </c:when>
+                	    
             	        <c:otherwise>
             	        <li>
         	            	<div class="menu-items menu-join"><a href="<%= request.getContextPath() %>/member/member_join.member" style="color: #0040FF">JOIN</a></div>
-    	                	<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_login.member">LOGIN</a></div>
-    	                </li>
-	                    </c:otherwise>
+    	                 </li>
+    	                 <li>
+    	                 	<div class="menu-items"><a href="<%= request.getContextPath() %>/member/member_login.member">LOGIN</a></div>
+    	                 </li>
+	                     </c:otherwise>
                     </c:choose>
+                    
                     <li>
                     	<div class="menu-items"><a href="<%= request.getContextPath() %>/board/board_list.board">BOARD</a></div>
                 		<div class="menu-items"><a href="">TALKTALK</a></div>

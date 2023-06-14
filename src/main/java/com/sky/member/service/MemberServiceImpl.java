@@ -100,28 +100,26 @@ public class MemberServiceImpl implements MemberService {
 
 
 	@Override //회원 삭제
-	public void deleteInfo(HttpServletRequest request, HttpServletResponse response) {
+	public int deleteInfo(HttpServletRequest request, HttpServletResponse response) {
 		
 		HttpSession session = request.getSession();
 		
 		String id = (String)session.getAttribute("member_id");
 		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String gender = request.getParameter("gender");
+//		String name = request.getParameter("name");
+//		String email = request.getParameter("email");
+//		String gender = request.getParameter("gender");
 		
-		//int result = 0;
+		int result = 0;		
 		
 		MemberDAO dao = MemberDAO.getInstance();
-		MemberVO vo = dao.getInfo(id);				
-		dao.deleteInfo(id); //, "pw"
+		result = dao.deleteInfo(id, pw); 
 		
-//		if(result == 1) {			
-//			return 1;
-//		} else { 
-//			return 0;
-//		}
-//	
-
+		if(result == 1) {			
+			return 1;
+		} else { 
+			return 0;
+		}
+		//return result;
 }
 }
