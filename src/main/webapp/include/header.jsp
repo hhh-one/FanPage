@@ -7,6 +7,8 @@
 <title>서강준(SEO KANG JUN) 팬페이지</title>
 	<!-- CSS 적용 -->
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css">
+    <!-- JS 적용 -->
+    <script src="<%= request.getContextPath() %>/js/main.js?v=1"></script>
 </head>
 <body>
 	<header>

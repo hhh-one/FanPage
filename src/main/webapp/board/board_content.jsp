@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../include/header.jsp"%>
 
 <div class="content">
@@ -12,7 +13,7 @@
 				<div class="board-title">${ boardvo.title }</div>
 				<div class="board-info">
 					<div class="board-writer">${ boardvo.name }</div>
-					<div class="board-date">${ boardvo.regdate }</div>
+					<div class="board-date"><fmt:formatDate value="${ boardvo.regdate }" pattern="yyyy/MM/dd(E) HH:mm" /></div>
 					<div class="board-hit">조회 ${ boardvo.hit }</div>
 				</div>
 			</div>
@@ -32,7 +33,13 @@
 				<div class="comment-list">
 					<div class="comment-writer">${ comment.name }</div>
 					<div class="comment-content">${ comment.content }</div>
-					<div class="comment-date">${comment.regdate }</div>
+					<div class="comment-btn">
+						<div class="comment-date"><fmt:formatDate value="${ comment.regdate }" pattern="yyyy/MM/dd HH:mm" /></div>
+					<c:if test="${ comment.name == sessionScope.member_name }">
+						<div class="comment-edit"><input type="button" value="수정" class="" onclick="location.href=''" /></div>
+						<div class="comment-delete"><input type="button" value="삭제" class="" onclick="location.href=''" /></div>
+					</c:if>
+					</div>
 				</div>
 			</c:forEach>
 			<!-- comment 작성 -->
@@ -42,11 +49,11 @@
 					<div class="comment-info">
 						<div class="write-writer">${ sessionScope.member_name }</div>
 						<div class="write-content">
-							<input type="text" placeholder="댓글을 남겨보세요" name="content" />
+							<input type="text" placeholder="댓글을 남겨보세요" name="content" id="comment-input"/>
 						</div>
 					</div>
 					<div class="comment-regist">
-						<input type="submit" value="등록" />
+						<input type="submit" value="등록" id="submit-button"/>
 					</div>
 				</form>
 			</div>

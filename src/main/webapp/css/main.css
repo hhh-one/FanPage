@@ -248,7 +248,7 @@ th {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid rgb(190, 190, 190);
 }
 
 .board-header {
@@ -306,9 +306,42 @@ th {
     margin: 5px 0 0 10px;
 }
 
-.comment-list:not(:last-child) {
-	border-bottom: 1px solid #dddddd;
+.comment-list {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 10px 16px 16px;
+    border-bottom: 1px solid #dddddd;
 }
+
+.comment-list .comment-writer {
+	font-size: 11pt;
+	margin: 5px;
+	font-weight: bold;
+}
+
+.comment-list .comment-content {
+	font-size: 11pt;
+	margin: 0 5px;
+}
+
+.comment-list .comment-date {
+	color: #6e6e6e;
+	font-size: 10pt;
+	margin: 0 5px;
+}
+
+.comment-btn {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.comment-edit {
+	margin-left: auto;
+	margin-right: 5px;
+}
+
 
 .comment-write {
     display: flex;
@@ -357,9 +390,11 @@ th {
     width: 100%;
     height: 35px;
 }
+
 .board-btn .delete-btn {
     margin-left: 10px;
 }
+
 .board-btn .list-btn {
     margin-left: auto;
 }
