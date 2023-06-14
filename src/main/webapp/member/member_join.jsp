@@ -2,9 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="../include/header.jsp" %>
-<%
-String header = request.getHeader("content-type");
-%>
+
 <head>
 <meta charset="UTF-8">
 <title>skyblue in your eyes</title>
@@ -27,26 +25,17 @@ String header = request.getHeader("content-type");
 </style>
 
 <style>
-
-
-p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  font-size: 18px;
-  color: #676767;
-}
-.frame {
+.btn-7 frame {
   width: 90%;
   margin: 40px auto;
   text-align: center;
 }
-.btn-5 button {
+.btn-7 button {
   margin: 20px;
   outline: none;
 }
-.custom-btn {
-  width: 130px;
+.btn-7 {
+  width: 100px;
   height: 40px;
   padding: 10px 25px;
   border: 2px solid #000;
@@ -58,44 +47,107 @@ p {
   position: relative;
   display: inline-block;
 }
-.btn-5 {
+.btn-7 {
   background: #000;
   color: #fff;
   line-height: 42px;
   padding: 0;
   border: none;
+  z-index: 1;
+   -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
-.btn-5:hover {
+.btn-7:hover {
   background: transparent;
   color: #000;
-   box-shadow:
-   -7px -7px 20px 0px #fff9,
-   -4px -4px 5px 0px #fff9,
-   7px 7px 20px 0px #0002,
-   4px 4px 5px 0px #0001;
 }
-.btn-5:before,
-.btn-5:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
+.btn-7:before,
+.btn-7:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 50%;
+  right: 0;
+  z-index: -1;
   background: #000;
-  transition:400ms ease all;
+  transition: all 0.3s ease;
 }
-.btn-5:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
+.btn-7:before {
+  top: 0;
 }
-.btn-5:hover:before,
-.btn-5:hover:after{
-  width:100%;
-  transition:800ms ease all;
+.btn-7:after {
+  bottom: 0;
 }
+.btn-7:hover:before,
+.btn-7:hover:after {
+  height: 0;
+  background-color: #000;
+}
+
+/* btn-8  */
+
+.btn-8 frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+.btn-8 button {
+  margin: 20px;
+  outline: none;
+}
+.btn-8 {
+  width: 100px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+.btn-8 {
+  background: #A4A4A4;
+  color: #fff;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  z-index: 1;
+   -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.btn-8:hover {
+  background: transparent;
+  color: #000;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 50%;
+  right: 0;
+  z-index: -1;
+  background: #000;
+  transition: all 0.3s ease;
+}
+.btn-8:before {
+  top: 0;
+}
+.btn-8:after {
+  bottom: 0;
+}
+.btn-8:hover:before,
+.btn-8:hover:after {
+  height: 0;
+  background-color: #000;
+}
+
+
 </style>
 
 
@@ -131,7 +183,8 @@ p {
 				<tr>
 					<td>* 아이디</td> <!-- 아이디 중복확인 넣어야함 -->
 					<td><input type="text" name="id" required="required" pattern="\w{5,}" maxlength="20" placeholder="영문 5글자 이상 "></td>
-					<td><input type="button" name="id중복확인" value="중복확인" onclick="idcheck();" style="background-color: #dcdcdc; border-color: white; color: #323232; width: 70px; height: 28px;" ></td>
+					<td><input type="button" name="id중복확인" value="중복확인" onclick="idcheck()"  style="background-color: #dcdcdc; border-color: white; color: #323232; width: 70px; height: 28px;" ></td>
+					<!--  style="background-color: #dcdcdc; border-color: white; color: #323232; width: 70px; height: 28px;"-->
 									
 					<!-- id 중복 체크 여부 -->
 					<td><input type="hidden" name="idDuplication" value="idCheck"></td> <!--  value가 idUncheck 이면 중복체크를 하지 않은 것 -->
@@ -174,14 +227,16 @@ p {
 			<div style="color: skyblue;">${msg }</div><br><br>		
 			
 			<section style="text-align: center; margin-top: 10px;">
-			<div style="display: inline-block; margin-right: 10px;">
+			<div style="display: inline-block; margin-right: 30px;">
 			
-			<input type="submit" value="가입하기" class="btn-5" >
+			<input type="submit" value="가입하기" class="btn-7" >
 					<!-- style="background-color: #AFDDFA; color: white; border-color: white; width: 70px; height: 30px;" -->
 			</div>
 			
-			<div style="display: inline-block;">
-			<input type="reset" value="입력초기화" style="background-color: #dcdcdc; border-color: white; color: #646464; width: 90px; height: 30px;" >
+			<div style="display: inline-block;" >
+			<input type="reset" value="입력초기화" class="btn-8" >
+			<!-- style="background-color: #dcdcdc; border-color: white; color: #646464; width: 90px; height: 30px;" >
+			 -->
 			</div><br><br>
 			<a href="../main.jsp" style="font-size: 13px;">메인 페이지로 돌아가기</a> 
 			

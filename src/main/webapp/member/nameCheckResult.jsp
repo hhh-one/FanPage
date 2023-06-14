@@ -12,7 +12,7 @@
 
 	<div style="text-align: center">
 
-	<h3> 닉네임 중복 확인 결과 </h3>
+	<h3 style="font-size:20px"> 닉네임 중복 확인 결과 </h3>
 	
 <%
 	//사용가능한 아이디일 경우, 아이디 입력 폼에 넣기
@@ -26,7 +26,7 @@
 	        out.println("<p style='color: red'> 닉네임을 입력해주세요.</p>");
 	    } else if (cnt == 0) {
 	    	out.println("<p>사용 가능한 닉네임입니다.</p>");
-			out.println("<a href='javascript:apply(\"" + name + "\")'>[적용]</a>");		
+			//out.println("<a href='javascript:apply(\"" + name + "\")'>[적용]</a>");		
 	    }else{
 	    	out.println("<p style='color: red'>해당 닉네임은 이미 사용중입니다.</p>");
 	    } //if end
@@ -37,14 +37,6 @@
 	&nbsp;&nbsp;
 	<a href="javascript:window.close()">[창 닫기]</a>
 
-	<script>
-    function apply(name){
-        //중복확인 id를 opener에 적용        
-        opener.document.regForm.id.value=id;
-        window.close(); //창닫기
-    } //apply () end
-    
-    </script>
 
 
 </div>

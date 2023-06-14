@@ -30,7 +30,7 @@
                     	<ul>
                         	<li>🎵 You are my love
                         		<audio class="audio-player" autoplay controls>
-                         			<source src="../audio/You%20Are%20My%20Love.mp3" type="audio/mp3">
+                         			<source src="<%=request.getContextPath() %>/audio/You%20Are%20My%20Love.mp3" type="audio/mp3">
                          		</audio>
                        	 </li>
                     	</ul>
