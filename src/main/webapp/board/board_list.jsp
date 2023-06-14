@@ -5,7 +5,8 @@
 <%@ include file="../include/header.jsp" %>
 
 <div class="content">
-	<h3>BOARD</h3>
+	<div class="content-wrap">
+		<div class="list-title">BOARD</div>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -34,16 +35,15 @@
 					<td colspan="5" align="right">
 						<form action="" class="form-inline" >
 						  <div class="form-group">
-						    <input type="text" name="search" placeholder="제목검색" class="form-control" >
-						  	<input type="submit" value="검색" class="btn btn-default">
 							<input type="button" value="글 작성" class="btn btn-default" onclick="location.href='board_write.board'">
 						  </div>
 						</form> 
 					</td>
 				</tr>
 			</tbody>
-		
+			
 		</table>
+	</div>
 </div>
 
 <%@ include file="../include/footer.jsp" %>

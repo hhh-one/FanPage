@@ -27,8 +27,9 @@
                     <div class="title">서강준(SEO KANG JUN) 팬페이지</div>
                     <!-- 오디오 관련 내용 -->
                     <div class = "audio-container">
+                    	<div class="audio-title">🎵 You are my love</div>
                     	<ul>
-                        	<li>🎵 You are my love
+                        	<li>
                         		<audio class="audio-player" autoplay controls>
                          			<source src="../audio/You%20Are%20My%20Love.mp3" type="audio/mp3">
                          		</audio>
@@ -81,4 +82,3 @@
                 </ul>
             </div>
         </div>
-       </div>

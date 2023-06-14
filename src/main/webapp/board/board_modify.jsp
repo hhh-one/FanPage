@@ -3,7 +3,8 @@
 <%@ include file="../include/header.jsp" %>
 
 <div class="content" align="center">
-	<h3>게시판 글 수정 페이지</h3>
+	<div class="content-wrap">
+	<div class="write-title">BOARD 글 수정 페이지</div>
 	<hr>
 	
 	<form action="board_update.board" method="post">
@@ -34,6 +35,7 @@
 			
 		</table>
 	</form>
+	</div>
 </div>
 
 <%@ include file="../include/footer.jsp" %>
